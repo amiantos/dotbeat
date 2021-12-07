@@ -18,6 +18,7 @@
 		440BE652275F0E0D00707EBD /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE651275F0E0D00707EBD /* AboutWindowController.swift */; };
 		440BE654275F112C00707EBD /* SimulateTimeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE653275F112C00707EBD /* SimulateTimeWindowController.swift */; };
 		440BE659275F165200707EBD /* SimulateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE658275F165200707EBD /* SimulateTimeViewController.swift */; };
+		440BE65B275FD54B00707EBD /* Zones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE65A275FD54B00707EBD /* Zones.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		440BE651275F0E0D00707EBD /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
 		440BE653275F112C00707EBD /* SimulateTimeWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulateTimeWindowController.swift; sourceTree = "<group>"; };
 		440BE658275F165200707EBD /* SimulateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulateTimeViewController.swift; sourceTree = "<group>"; };
+		440BE65A275FD54B00707EBD /* Zones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zones.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				440BE656275F115500707EBD /* Controllers */,
 				440BE655275F114500707EBD /* Views */,
 				440BE657275F116F00707EBD /* Utilities */,
+				440BE65A275FD54B00707EBD /* Zones.swift */,
 			);
 			path = "Internet Time";
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				440BE645275EFF5900707EBD /* MainMenuController.swift in Sources */,
 				440BE654275F112C00707EBD /* SimulateTimeWindowController.swift in Sources */,
 				440BE64B275F06B100707EBD /* Date+Beats.swift in Sources */,
+				440BE65B275FD54B00707EBD /* Zones.swift in Sources */,
 				440BE64D275F06D900707EBD /* Int+Beats.swift in Sources */,
 				440BE652275F0E0D00707EBD /* AboutWindowController.swift in Sources */,
 			);
