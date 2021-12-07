@@ -11,6 +11,11 @@
 		440BE636275EFDB000707EBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE635275EFDB000707EBD /* ViewController.swift */; };
 		440BE638275EFDB200707EBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440BE637275EFDB200707EBD /* Assets.xcassets */; };
 		440BE63B275EFDB200707EBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440BE639275EFDB200707EBD /* Main.storyboard */; };
+		440BE645275EFF5900707EBD /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE644275EFF5900707EBD /* MainMenuController.swift */; };
+		440BE649275F021E00707EBD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440BE648275F021E00707EBD /* MainMenu.xib */; };
+		440BE64B275F06B100707EBD /* Date+Beats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE64A275F06B100707EBD /* Date+Beats.swift */; };
+		440BE64D275F06D900707EBD /* Int+Beats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE64C275F06D900707EBD /* Int+Beats.swift */; };
+		440BE64F275F08FB00707EBD /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE64E275F08FB00707EBD /* Logging.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		440BE637275EFDB200707EBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		440BE63A275EFDB200707EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		440BE63C275EFDB200707EBD /* Internet_Time.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Internet_Time.entitlements; sourceTree = "<group>"; };
+		440BE644275EFF5900707EBD /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
+		440BE648275F021E00707EBD /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		440BE64A275F06B100707EBD /* Date+Beats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Beats.swift"; sourceTree = "<group>"; };
+		440BE64C275F06D900707EBD /* Int+Beats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Beats.swift"; sourceTree = "<group>"; };
+		440BE64E275F08FB00707EBD /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +62,16 @@
 		440BE632275EFDB000707EBD /* Internet Time */ = {
 			isa = PBXGroup;
 			children = (
-				440BE633275EFDB000707EBD /* AppDelegate.swift */,
 				440BE635275EFDB000707EBD /* ViewController.swift */,
 				440BE637275EFDB200707EBD /* Assets.xcassets */,
 				440BE639275EFDB200707EBD /* Main.storyboard */,
 				440BE63C275EFDB200707EBD /* Internet_Time.entitlements */,
+				440BE644275EFF5900707EBD /* MainMenuController.swift */,
+				440BE633275EFDB000707EBD /* AppDelegate.swift */,
+				440BE648275F021E00707EBD /* MainMenu.xib */,
+				440BE64A275F06B100707EBD /* Date+Beats.swift */,
+				440BE64C275F06D900707EBD /* Int+Beats.swift */,
+				440BE64E275F08FB00707EBD /* Logging.swift */,
 			);
 			path = "Internet Time";
 			sourceTree = "<group>";
@@ -121,6 +136,7 @@
 			files = (
 				440BE638275EFDB200707EBD /* Assets.xcassets in Resources */,
 				440BE63B275EFDB200707EBD /* Main.storyboard in Resources */,
+				440BE649275F021E00707EBD /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				440BE636275EFDB000707EBD /* ViewController.swift in Sources */,
+				440BE64F275F08FB00707EBD /* Logging.swift in Sources */,
 				440BE634275EFDB000707EBD /* AppDelegate.swift in Sources */,
+				440BE645275EFF5900707EBD /* MainMenuController.swift in Sources */,
+				440BE64B275F06B100707EBD /* Date+Beats.swift in Sources */,
+				440BE64D275F06D900707EBD /* Int+Beats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +221,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -256,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -278,12 +298,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.amiantos.Internet-Time";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -305,12 +326,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.amiantos.Internet-Time";
 				PRODUCT_NAME = "$(TARGET_NAME)";
