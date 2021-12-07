@@ -123,6 +123,13 @@ class SimulateTimeViewController: NSViewController {
         
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        date = Date()
+        timeSlider.doubleValue = Double(date.nearestBeat)
+        updateInterface()
+    }
+    
     private func updateInterface() {
         localTimeLabel.stringValue = dateFormatter.string(from: date)
         internetTimeLabel.stringValue = "@\(date.nearestBeat)"
