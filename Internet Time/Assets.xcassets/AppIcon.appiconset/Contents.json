@@ -1,61 +1,61 @@
 {
   "images" : [
     {
-      "filename" : "Internet Time Icon-13.png",
+      "filename" : "Internet Time Icon16w.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
-      "filename" : "Internet Time Icon-12.png",
+      "filename" : "Internet Time Icon32w-1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "Internet Time Icon-11.png",
+      "filename" : "Internet Time Icon32w.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
-      "filename" : "Internet Time Icon-10.png",
+      "filename" : "Internet Time Icon64w.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
-      "filename" : "Internet Time Icon-9.png",
+      "filename" : "Internet Time Icon128w.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "Internet Time Icon-8.png",
+      "filename" : "Internet Time Icon256w-1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "Internet Time Icon-7.png",
+      "filename" : "Internet Time Icon256w.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "Internet Time Icon-6.png",
+      "filename" : "Internet Time Icon512w-1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "Internet Time Icon-5.png",
+      "filename" : "Internet Time Icon512w.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "Internet Time Icon-2.png",
+      "filename" : "Internet Time Icon1024w.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

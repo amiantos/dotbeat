@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "Internet Time Icon-6.png",
+      "filename" : "Internet Time Icon256w.png",
       "idiom" : "mac",
       "scale" : "1x"
     },
     {
-      "filename" : "Internet Time Icon-5.png",
+      "filename" : "Internet Time Icon512w.png",
       "idiom" : "mac",
       "scale" : "2x"
     }

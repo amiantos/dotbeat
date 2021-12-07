@@ -152,7 +152,7 @@ Brad Root and Internet Time is in no way affiliated with Swatch® or its product
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q5K-vc-g61">
-                                <rect key="frame" x="20" y="238" width="256" height="256"/>
+                                <rect key="frame" x="20" y="234" width="256" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="256" id="hLs-QJ-rEf"/>
                                     <constraint firstAttribute="width" constant="256" id="zeW-3l-KGe"/>
@@ -197,7 +197,7 @@ Brad Root and Internet Time is in no way affiliated with Swatch® or its product
                             <constraint firstItem="IYU-fI-hdE" firstAttribute="top" secondItem="HO1-fC-Ywl" secondAttribute="bottom" constant="16" id="Sd4-YD-doY"/>
                             <constraint firstItem="q5K-vc-g61" firstAttribute="leading" secondItem="Ge7-2k-pj9" secondAttribute="leading" constant="20" symbolic="YES" id="VgI-M9-VDX"/>
                             <constraint firstItem="IYU-fI-hdE" firstAttribute="centerX" secondItem="Ge7-2k-pj9" secondAttribute="centerX" id="d53-F1-zwL"/>
-                            <constraint firstItem="mmT-lL-F0M" firstAttribute="top" secondItem="q5K-vc-g61" secondAttribute="bottom" constant="20" id="flK-dB-hbA"/>
+                            <constraint firstItem="mmT-lL-F0M" firstAttribute="top" secondItem="q5K-vc-g61" secondAttribute="bottom" constant="16" id="flK-dB-hbA"/>
                             <constraint firstAttribute="bottom" secondItem="Yvl-Sn-T8F" secondAttribute="bottom" constant="20" symbolic="YES" id="jGZ-25-go1"/>
                             <constraint firstItem="Yvl-Sn-T8F" firstAttribute="top" secondItem="IYU-fI-hdE" secondAttribute="bottom" constant="16" id="pJL-ay-Dqy"/>
                         </constraints>
