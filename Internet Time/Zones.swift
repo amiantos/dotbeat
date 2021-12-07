@@ -19,7 +19,9 @@ class Zone {
         self.timeZone = timeZone
         self.name = name
         
-        gmtOffsetLabel = NSTextField(labelWithString: "GMT \(Double(timeZone.secondsFromGMT())/60.0/60.0)")
+        let gmtOffset = Double(timeZone.secondsFromGMT())/60.0/60.0
+        let stringOffset = gmtOffset < 0 ? "GMT\(gmtOffset.clean)" : "GMT+\(gmtOffset.clean)"
+        gmtOffsetLabel = NSTextField(labelWithString: stringOffset)
         gmtOffsetLabel.translatesAutoresizingMaskIntoConstraints = false
         gmtOffsetLabel.textColor = .tertiaryLabelColor
         
@@ -35,4 +37,11 @@ class Zone {
         
     
     }
+}
+
+extension Double {
+    var clean: String {
+       return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
+    }
+
 }
