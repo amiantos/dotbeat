@@ -17,4 +17,20 @@ extension Int {
         dateComponents.nanosecond = Int((totalBeats - floor(totalBeats)) * 10.0) * 100 * 1000 * 1000
         return dateComponents
     }
+    
+    var date: Date? {
+        var components = Calendar.current
+            .dateComponents([.timeZone, .year, .month, .day, .hour, .minute, .second], from: Date())
+        components.timeZone = TimeZone(secondsFromGMT: 60 * 60) // BMT == UTC+1
+        components.hour = 0
+        components.minute = 0
+        components.second = 0
+
+        guard let midnight = Calendar.current.date(from: components) else { return nil }
+
+        let seconds = Double(self) * 86.4;
+        
+        return midnight.addingTimeInterval(seconds)
+        
+    }
 }
