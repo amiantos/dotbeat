@@ -115,7 +115,7 @@ class SimulateTimeViewController: NSViewController {
             
             // Bottom row constraints
             if [28, 29, 30, 31].contains(index) {
-                zone.timeLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -16).isActive = true
+                zone.timeLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
             }
             
             index += 1
