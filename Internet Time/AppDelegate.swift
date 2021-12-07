@@ -25,6 +25,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
+    public static func bringToFront(window: NSWindow) {
+        window.center()
+        window.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+    }
 
 }
 

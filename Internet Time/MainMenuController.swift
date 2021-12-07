@@ -15,6 +15,21 @@ class MainMenuController: NSObject, NSMenuDelegate {
     private var timer: Timer?
     private var updateInterval: TimeInterval
     
+    @IBAction func quitMenuBarAction(_: NSMenuItem) {
+        NSApplication.shared.terminate(self)
+    }
+    
+    private lazy var aboutWindowController = NSStoryboard(
+        name: "Main",
+        bundle: nil
+    ).instantiateController(
+        withIdentifier: "AboutWindowController"
+    ) as? NSWindowController
+    
+    @IBAction func aboutAction(_: NSMenuItem) {
+        aboutWindowController?.showWindow(self)
+    }
+    
     // MARK: - View Lifecycle
     
     override init() {

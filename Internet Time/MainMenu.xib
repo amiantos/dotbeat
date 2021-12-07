@@ -683,8 +683,15 @@
                 <menuItem isSeparatorItem="YES" id="U4v-cv-Cwj"/>
                 <menuItem title="About" id="Wf4-Md-Tz3">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="aboutAction:" target="7M3-v3-cf5" id="Tcc-q2-R1I"/>
+                    </connections>
                 </menuItem>
-                <menuItem title="Quit" keyEquivalent="q" id="ldX-tH-m0y"/>
+                <menuItem title="Quit" keyEquivalent="q" id="ldX-tH-m0y">
+                    <connections>
+                        <action selector="quitMenuBarAction:" target="7M3-v3-cf5" id="NX8-t7-P2Z"/>
+                    </connections>
+                </menuItem>
             </items>
             <connections>
                 <outlet property="delegate" destination="19C-54-HeB" id="jbv-oF-Ns8"/>

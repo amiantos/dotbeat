@@ -16,6 +16,7 @@
 		440BE64B275F06B100707EBD /* Date+Beats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE64A275F06B100707EBD /* Date+Beats.swift */; };
 		440BE64D275F06D900707EBD /* Int+Beats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE64C275F06D900707EBD /* Int+Beats.swift */; };
 		440BE64F275F08FB00707EBD /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE64E275F08FB00707EBD /* Logging.swift */; };
+		440BE652275F0E0D00707EBD /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE651275F0E0D00707EBD /* AboutWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		440BE64A275F06B100707EBD /* Date+Beats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Beats.swift"; sourceTree = "<group>"; };
 		440BE64C275F06D900707EBD /* Int+Beats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Beats.swift"; sourceTree = "<group>"; };
 		440BE64E275F08FB00707EBD /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		440BE650275F0C5900707EBD /* Internet-Time-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Internet-Time-Info.plist"; sourceTree = SOURCE_ROOT; };
+		440BE651275F0E0D00707EBD /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 		440BE632275EFDB000707EBD /* Internet Time */ = {
 			isa = PBXGroup;
 			children = (
+				440BE650275F0C5900707EBD /* Internet-Time-Info.plist */,
 				440BE635275EFDB000707EBD /* ViewController.swift */,
 				440BE637275EFDB200707EBD /* Assets.xcassets */,
 				440BE639275EFDB200707EBD /* Main.storyboard */,
@@ -72,6 +76,7 @@
 				440BE64A275F06B100707EBD /* Date+Beats.swift */,
 				440BE64C275F06D900707EBD /* Int+Beats.swift */,
 				440BE64E275F08FB00707EBD /* Logging.swift */,
+				440BE651275F0E0D00707EBD /* AboutWindowController.swift */,
 			);
 			path = "Internet Time";
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				440BE645275EFF5900707EBD /* MainMenuController.swift in Sources */,
 				440BE64B275F06B100707EBD /* Date+Beats.swift in Sources */,
 				440BE64D275F06D900707EBD /* Int+Beats.swift in Sources */,
+				440BE652275F0E0D00707EBD /* AboutWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +303,7 @@
 				DEVELOPMENT_TEAM = 2Y9M69QJKZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Internet-Time-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -325,6 +332,7 @@
 				DEVELOPMENT_TEAM = 2Y9M69QJKZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Internet-Time-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;

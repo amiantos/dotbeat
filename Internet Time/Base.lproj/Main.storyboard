@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,11 +675,71 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Internet_Time" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="9Qd-55-3xo">
+            <objects>
+                <windowController storyboardIdentifier="AboutWindowController" id="jTt-2a-CsQ" customClass="AboutWindowController" customModule="Internet_Time" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="sqx-GP-SRG">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="462" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+                        <view key="contentView" id="pgJ-Ra-icL">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="jTt-2a-CsQ" id="Pjj-Zo-sDB"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="Ae1-QR-4eD" kind="relationship" relationship="window.shadowedContentViewController" id="6o7-Qk-aqn"/>
+                    </connections>
+                </windowController>
+                <customObject id="grF-v6-IaT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-558" y="293"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1R5-sg-HNw">
+            <objects>
+                <viewController id="Ae1-QR-4eD" sceneMemberID="viewController">
+                    <view key="view" id="Ge7-2k-pj9">
+                        <rect key="frame" x="0.0" y="0.0" width="283" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-Sn-T8F">
+                                <rect key="frame" x="18" y="20" width="247" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="Faa-qI-umr"/>
+                                </constraints>
+                                <textFieldCell key="cell" alignment="center" id="rty-m0-xTa">
+                                    <font key="font" metaFont="label" size="11"/>
+                                    <string key="title">Internet Time © 2021 Brad Root 
+
+“Swatch” is a registered trademark of The Swatch Group Ltd.
+
+Brad Root and Internet Time is in no way affiliated with Swatch® or its products.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Yvl-Sn-T8F" firstAttribute="leading" secondItem="Ge7-2k-pj9" secondAttribute="leading" constant="20" symbolic="YES" id="H4K-pd-7Oi"/>
+                            <constraint firstAttribute="bottom" secondItem="Yvl-Sn-T8F" secondAttribute="bottom" constant="20" symbolic="YES" id="jGZ-25-go1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="RXA-Qj-v6d" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-662.5" y="733"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -703,7 +765,7 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Internet_Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
