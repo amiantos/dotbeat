@@ -78,12 +78,14 @@ class SimulateTimeViewController: NSViewController {
             self.view.addSubview(zone.gmtOffsetLabel)
             self.view.addSubview(zone.cityLabel)
             self.view.addSubview(zone.timeLabel)
-            zone.gmtOffsetLabel.bottomAnchor.constraint(equalTo: zone.cityLabel.topAnchor, constant: -1).isActive = true
+            
+            zone.gmtOffsetLabel.topAnchor.constraint(equalTo: zone.timeLabel.bottomAnchor, constant: 4).isActive = true
             zone.cityLabel.bottomAnchor.constraint(equalTo: zone.timeLabel.topAnchor, constant: -3).isActive = true
             
-            zone.gmtOffsetLabel.widthAnchor.constraint(equalToConstant: 85).isActive = true
-            zone.timeLabel.widthAnchor.constraint(equalToConstant: 85).isActive = true
-            zone.cityLabel.widthAnchor.constraint(equalToConstant: 85).isActive = true
+            
+            zone.gmtOffsetLabel.widthAnchor.constraint(equalToConstant: 115).isActive = true
+            zone.timeLabel.widthAnchor.constraint(equalToConstant: 115).isActive = true
+            zone.cityLabel.widthAnchor.constraint(equalToConstant: 115).isActive = true
             
             // Far left items
             if [0, 4, 8, 12, 16, 20, 24, 28, 32].contains(index) {
@@ -108,14 +110,14 @@ class SimulateTimeViewController: NSViewController {
             
             // Top Row Constraints
             if [0, 1, 2, 3].contains(index) {
-                zone.gmtOffsetLabel.topAnchor.constraint(equalTo: timeSlider.bottomAnchor, constant: 16).isActive = true
+                zone.cityLabel.topAnchor.constraint(equalTo: timeSlider.bottomAnchor, constant: 16).isActive = true
             } else {
-                zone.gmtOffsetLabel.topAnchor.constraint(equalTo: zones[index-4].timeLabel.bottomAnchor, constant: 10).isActive = true
+                zone.cityLabel.topAnchor.constraint(equalTo: zones[index-4].gmtOffsetLabel.bottomAnchor, constant: 16).isActive = true
             }
             
             // Bottom row constraints
             if [28, 29, 30, 31].contains(index) {
-                zone.timeLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
+                zone.gmtOffsetLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
             }
             
             index += 1

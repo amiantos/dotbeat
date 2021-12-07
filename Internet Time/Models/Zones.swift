@@ -24,9 +24,12 @@ class Zone {
         gmtOffsetLabel = NSTextField(labelWithString: stringOffset)
         gmtOffsetLabel.translatesAutoresizingMaskIntoConstraints = false
         gmtOffsetLabel.textColor = .tertiaryLabelColor
+        gmtOffsetLabel.font = NSFont.systemFont(ofSize: 11)
         
-        
-        cityLabel = NSTextField(labelWithString: self.name)
+        var nameString = timeZone.localizedName(for: .generic, locale: Locale.current) ?? self.name
+        nameString = nameString.replacingOccurrences(of: " Standard", with: "")
+        nameString = nameString.replacingOccurrences(of: " Time", with: "")
+        cityLabel = NSTextField(labelWithString: nameString)
         cityLabel.translatesAutoresizingMaskIntoConstraints = false
         cityLabel.textColor = .secondaryLabelColor
         

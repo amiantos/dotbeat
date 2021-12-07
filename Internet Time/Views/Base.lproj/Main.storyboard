@@ -61,11 +61,11 @@
             <objects>
                 <viewController title="Simulate Internet Time" id="aYG-P2-CRV" customClass="SimulateTimeViewController" customModule="Internet_Time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="tfs-4I-gMu">
-                        <rect key="frame" x="0.0" y="0.0" width="404" height="684"/>
+                        <rect key="frame" x="0.0" y="0.0" width="552" height="684"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5VX-1q-8va">
-                                <rect key="frame" x="18" y="576" width="368" height="28"/>
+                                <rect key="frame" x="18" y="576" width="516" height="28"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="999" tickMarkPosition="above" sliderType="linear" id="dLP-Hq-qI4"/>
                                 <connections>
                                     <action selector="sliderChanged:" target="aYG-P2-CRV" id="WJy-yP-unk"/>
@@ -80,7 +80,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PiK-Hi-g3K">
-                                <rect key="frame" x="274" y="612" width="112" height="31"/>
+                                <rect key="frame" x="422" y="612" width="112" height="31"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="12:30 PM" id="6Mg-ye-dbK">
                                     <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -96,7 +96,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WpZ-P3-Z1e">
-                                <rect key="frame" x="316" y="643" width="70" height="16"/>
+                                <rect key="frame" x="464" y="643" width="70" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Local Time" id="ShO-l2-4pd">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -128,21 +128,18 @@
                 </viewController>
                 <customObject id="LdH-HR-H1K" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="27" y="1091"/>
+            <point key="canvasLocation" x="101" y="1091"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="1R5-sg-HNw">
             <objects>
-                <viewController id="Ae1-QR-4eD" sceneMemberID="viewController">
-                    <view key="view" id="Ge7-2k-pj9">
-                        <rect key="frame" x="0.0" y="0.0" width="283" height="270"/>
+                <viewController id="Ae1-QR-4eD" customClass="AboutViewController" customModule="Internet_Time" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" misplaced="YES" id="Ge7-2k-pj9">
+                        <rect key="frame" x="0.0" y="0.0" width="296" height="516"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-Sn-T8F">
-                                <rect key="frame" x="18" y="20" width="247" height="98"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="243" id="Faa-qI-umr"/>
-                                </constraints>
+                                <rect key="frame" x="18" y="20" width="260" height="98"/>
                                 <textFieldCell key="cell" alignment="center" id="rty-m0-xTa">
                                     <font key="font" metaFont="label" size="11"/>
                                     <string key="title">Internet Time © 2021 Brad Root 
@@ -154,16 +151,64 @@ Brad Root and Internet Time is in no way affiliated with Swatch® or its product
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q5K-vc-g61">
+                                <rect key="frame" x="20" y="238" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="hLs-QJ-rEf"/>
+                                    <constraint firstAttribute="width" constant="256" id="zeW-3l-KGe"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="about-icon" id="Jhi-cI-Tt7"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mmT-lL-F0M">
+                                <rect key="frame" x="56" y="180" width="185" height="38"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Internet Time" id="sDT-ZO-e2P">
+                                    <font key="font" metaFont="system" size="32"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HO1-fC-Ywl">
+                                <rect key="frame" x="117" y="166" width="62" height="14"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.0" id="C7Q-bv-iQH">
+                                    <font key="font" metaFont="label" size="11"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IYU-fI-hdE" userLabel="GitHub URL">
+                                <rect key="frame" x="41" y="134" width="214" height="16"/>
+                                <buttonCell key="cell" type="bevel" title="github.com/amiantos/internet-time" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="dn0-Ld-FoR">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="aboutURLButton:" target="Ae1-QR-4eD" id="M5t-MA-ty6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="mmT-lL-F0M" firstAttribute="centerX" secondItem="Ge7-2k-pj9" secondAttribute="centerX" id="6AE-az-Yej"/>
+                            <constraint firstItem="q5K-vc-g61" firstAttribute="top" secondItem="Ge7-2k-pj9" secondAttribute="top" constant="20" symbolic="YES" id="6Qa-1A-QT7"/>
+                            <constraint firstItem="HO1-fC-Ywl" firstAttribute="top" secondItem="mmT-lL-F0M" secondAttribute="bottom" id="CiF-vZ-ARL"/>
                             <constraint firstItem="Yvl-Sn-T8F" firstAttribute="leading" secondItem="Ge7-2k-pj9" secondAttribute="leading" constant="20" symbolic="YES" id="H4K-pd-7Oi"/>
+                            <constraint firstAttribute="trailing" secondItem="Yvl-Sn-T8F" secondAttribute="trailing" constant="20" symbolic="YES" id="J0t-7o-sjf"/>
+                            <constraint firstAttribute="trailing" secondItem="q5K-vc-g61" secondAttribute="trailing" constant="20" symbolic="YES" id="OFj-2b-gRB"/>
+                            <constraint firstItem="HO1-fC-Ywl" firstAttribute="centerX" secondItem="Ge7-2k-pj9" secondAttribute="centerX" id="OVm-JC-ukF"/>
+                            <constraint firstItem="IYU-fI-hdE" firstAttribute="top" secondItem="HO1-fC-Ywl" secondAttribute="bottom" constant="16" id="Sd4-YD-doY"/>
+                            <constraint firstItem="q5K-vc-g61" firstAttribute="leading" secondItem="Ge7-2k-pj9" secondAttribute="leading" constant="20" symbolic="YES" id="VgI-M9-VDX"/>
+                            <constraint firstItem="IYU-fI-hdE" firstAttribute="centerX" secondItem="Ge7-2k-pj9" secondAttribute="centerX" id="d53-F1-zwL"/>
+                            <constraint firstItem="mmT-lL-F0M" firstAttribute="top" secondItem="q5K-vc-g61" secondAttribute="bottom" constant="20" id="flK-dB-hbA"/>
                             <constraint firstAttribute="bottom" secondItem="Yvl-Sn-T8F" secondAttribute="bottom" constant="20" symbolic="YES" id="jGZ-25-go1"/>
+                            <constraint firstItem="Yvl-Sn-T8F" firstAttribute="top" secondItem="IYU-fI-hdE" secondAttribute="bottom" constant="16" id="pJL-ay-Dqy"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="RXA-Qj-v6d" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-558" y="732"/>
+            <point key="canvasLocation" x="-558" y="927"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="about-icon" width="256" height="256"/>
+    </resources>
 </document>
