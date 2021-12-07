@@ -1,6 +1,6 @@
 //
 //  AboutViewController.swift
-//  Internet Time
+//  dotBeat
 //
 //  Created by Brad Root on 12/7/21.
 //

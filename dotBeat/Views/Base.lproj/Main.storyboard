@@ -9,8 +9,8 @@
         <!--Window Controller-->
         <scene sceneID="9Qd-55-3xo">
             <objects>
-                <windowController storyboardIdentifier="AboutWindowController" id="jTt-2a-CsQ" customClass="AboutWindowController" customModule="Internet_Time" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="About Internet Time" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="sqx-GP-SRG">
+                <windowController storyboardIdentifier="AboutWindowController" id="jTt-2a-CsQ" customClass="AboutWindowController" customModule="dotBeat" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="About dotBeat" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="sqx-GP-SRG">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="425" y="462" width="480" height="270"/>
@@ -34,7 +34,7 @@
         <!--Window Controller-->
         <scene sceneID="dtw-JA-6dp">
             <objects>
-                <windowController storyboardIdentifier="SimulateTimeWindowController" id="tUB-2e-f7Q" customClass="SimulateTimeWindowController" customModule="Internet_Time" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="SimulateTimeWindowController" id="tUB-2e-f7Q" customClass="SimulateTimeWindowController" customModule="dotBeat" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Simulate Internet Time" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="veP-DM-EmE">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -59,7 +59,7 @@
         <!--Simulate Internet Time-->
         <scene sceneID="LSz-5d-bWy">
             <objects>
-                <viewController title="Simulate Internet Time" id="aYG-P2-CRV" customClass="SimulateTimeViewController" customModule="Internet_Time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Simulate Internet Time" id="aYG-P2-CRV" customClass="SimulateTimeViewController" customModule="dotBeat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="tfs-4I-gMu">
                         <rect key="frame" x="0.0" y="0.0" width="552" height="684"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -133,7 +133,7 @@
         <!--About View Controller-->
         <scene sceneID="1R5-sg-HNw">
             <objects>
-                <viewController id="Ae1-QR-4eD" customClass="AboutViewController" customModule="Internet_Time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ae1-QR-4eD" customClass="AboutViewController" customModule="dotBeat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" misplaced="YES" id="Ge7-2k-pj9">
                         <rect key="frame" x="0.0" y="0.0" width="296" height="516"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -142,7 +142,7 @@
                                 <rect key="frame" x="18" y="20" width="260" height="98"/>
                                 <textFieldCell key="cell" alignment="center" id="rty-m0-xTa">
                                     <font key="font" metaFont="label" size="11"/>
-                                    <string key="title">Internet Time © 2021 Brad Root 
+                                    <string key="title">dotBeat © 2021 Brad Root 
 
 “Swatch” is a registered trademark of The Swatch Group Ltd.
 
@@ -160,8 +160,8 @@ Brad Root and Internet Time is in no way affiliated with Swatch® or its product
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="about-icon" id="Jhi-cI-Tt7"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mmT-lL-F0M">
-                                <rect key="frame" x="56" y="180" width="185" height="38"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Internet Time" id="sDT-ZO-e2P">
+                                <rect key="frame" x="92" y="180" width="113" height="38"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="dotBeat" id="sDT-ZO-e2P">
                                     <font key="font" metaFont="system" size="32"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -176,8 +176,8 @@ Brad Root and Internet Time is in no way affiliated with Swatch® or its product
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IYU-fI-hdE" userLabel="GitHub URL">
-                                <rect key="frame" x="41" y="134" width="214" height="16"/>
-                                <buttonCell key="cell" type="bevel" title="github.com/amiantos/internet-time" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="dn0-Ld-FoR">
+                                <rect key="frame" x="57" y="134" width="182" height="16"/>
+                                <buttonCell key="cell" type="bevel" title="github.com/amiantos/dotbeat" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="dn0-Ld-FoR">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

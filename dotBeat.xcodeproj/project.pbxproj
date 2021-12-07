@@ -23,17 +23,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		440BE630275EFDB000707EBD /* Internet Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Internet Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		440BE630275EFDB000707EBD /* dotBeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dotBeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		440BE633275EFDB000707EBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		440BE637275EFDB200707EBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		440BE63A275EFDB200707EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		440BE63C275EFDB200707EBD /* Internet_Time.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Internet_Time.entitlements; sourceTree = "<group>"; };
+		440BE63C275EFDB200707EBD /* dotBeat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dotBeat.entitlements; sourceTree = "<group>"; };
 		440BE644275EFF5900707EBD /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		440BE648275F021E00707EBD /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		440BE64A275F06B100707EBD /* Date+Beats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Beats.swift"; sourceTree = "<group>"; };
 		440BE64C275F06D900707EBD /* Int+Beats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Beats.swift"; sourceTree = "<group>"; };
 		440BE64E275F08FB00707EBD /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
-		440BE650275F0C5900707EBD /* Internet-Time-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Internet-Time-Info.plist"; sourceTree = SOURCE_ROOT; };
+		440BE650275F0C5900707EBD /* dotBeat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dotBeat-Info.plist"; sourceTree = SOURCE_ROOT; };
 		440BE651275F0E0D00707EBD /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
 		440BE653275F112C00707EBD /* SimulateTimeWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulateTimeWindowController.swift; sourceTree = "<group>"; };
 		440BE658275F165200707EBD /* SimulateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulateTimeViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		440BE627275EFDB000707EBD = {
 			isa = PBXGroup;
 			children = (
-				440BE632275EFDB000707EBD /* Internet Time */,
+				440BE632275EFDB000707EBD /* dotBeat */,
 				440BE631275EFDB000707EBD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,16 +63,16 @@
 		440BE631275EFDB000707EBD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				440BE630275EFDB000707EBD /* Internet Time.app */,
+				440BE630275EFDB000707EBD /* dotBeat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		440BE632275EFDB000707EBD /* Internet Time */ = {
+		440BE632275EFDB000707EBD /* dotBeat */ = {
 			isa = PBXGroup;
 			children = (
-				440BE650275F0C5900707EBD /* Internet-Time-Info.plist */,
-				440BE63C275EFDB200707EBD /* Internet_Time.entitlements */,
+				440BE650275F0C5900707EBD /* dotBeat-Info.plist */,
+				440BE63C275EFDB200707EBD /* dotBeat.entitlements */,
 				440BE637275EFDB200707EBD /* Assets.xcassets */,
 				440BE633275EFDB000707EBD /* AppDelegate.swift */,
 				440BE65C2760089200707EBD /* Models */,
@@ -80,7 +80,7 @@
 				440BE655275F114500707EBD /* Views */,
 				440BE657275F116F00707EBD /* Utilities */,
 			);
-			path = "Internet Time";
+			path = dotBeat;
 			sourceTree = "<group>";
 		};
 		440BE655275F114500707EBD /* Views */ = {
@@ -125,9 +125,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		440BE62F275EFDB000707EBD /* Internet Time */ = {
+		440BE62F275EFDB000707EBD /* dotBeat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 440BE63F275EFDB200707EBD /* Build configuration list for PBXNativeTarget "Internet Time" */;
+			buildConfigurationList = 440BE63F275EFDB200707EBD /* Build configuration list for PBXNativeTarget "dotBeat" */;
 			buildPhases = (
 				440BE62C275EFDB000707EBD /* Sources */,
 				440BE62D275EFDB000707EBD /* Frameworks */,
@@ -137,9 +137,9 @@
 			);
 			dependencies = (
 			);
-			name = "Internet Time";
+			name = dotBeat;
 			productName = "Internet Time";
-			productReference = 440BE630275EFDB000707EBD /* Internet Time.app */;
+			productReference = 440BE630275EFDB000707EBD /* dotBeat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -157,7 +157,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 440BE62B275EFDB000707EBD /* Build configuration list for PBXProject "Internet Time" */;
+			buildConfigurationList = 440BE62B275EFDB000707EBD /* Build configuration list for PBXProject "dotBeat" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -170,7 +170,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				440BE62F275EFDB000707EBD /* Internet Time */,
+				440BE62F275EFDB000707EBD /* dotBeat */,
 			);
 		};
 /* End PBXProject section */
@@ -340,14 +340,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Internet Time/Internet_Time.entitlements";
+				CODE_SIGN_ENTITLEMENTS = dotBeat/dotBeat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Y9M69QJKZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Internet-Time-Info.plist";
+				INFOPLIST_FILE = "dotBeat-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -357,7 +358,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.amiantos.Internet-Time";
+				PRODUCT_BUNDLE_IDENTIFIER = net.amiantos.dotBeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -369,14 +370,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Internet Time/Internet_Time.entitlements";
+				CODE_SIGN_ENTITLEMENTS = dotBeat/dotBeat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Y9M69QJKZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Internet-Time-Info.plist";
+				INFOPLIST_FILE = "dotBeat-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -386,7 +388,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.amiantos.Internet-Time";
+				PRODUCT_BUNDLE_IDENTIFIER = net.amiantos.dotBeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -396,7 +398,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		440BE62B275EFDB000707EBD /* Build configuration list for PBXProject "Internet Time" */ = {
+		440BE62B275EFDB000707EBD /* Build configuration list for PBXProject "dotBeat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				440BE63D275EFDB200707EBD /* Debug */,
@@ -405,7 +407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		440BE63F275EFDB200707EBD /* Build configuration list for PBXNativeTarget "Internet Time" */ = {
+		440BE63F275EFDB200707EBD /* Build configuration list for PBXNativeTarget "dotBeat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				440BE640275EFDB200707EBD /* Debug */,

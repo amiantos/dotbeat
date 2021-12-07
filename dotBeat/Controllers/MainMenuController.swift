@@ -1,6 +1,6 @@
 //
 //  MainMenuController.swift
-//  Internet Time
+//  dotBeat
 //
 //  Created by Brad Root on 12/6/21.
 //
