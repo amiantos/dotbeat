@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		440BE634275EFDB000707EBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE633275EFDB000707EBD /* AppDelegate.swift */; };
-		440BE636275EFDB000707EBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE635275EFDB000707EBD /* ViewController.swift */; };
 		440BE638275EFDB200707EBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440BE637275EFDB200707EBD /* Assets.xcassets */; };
 		440BE63B275EFDB200707EBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440BE639275EFDB200707EBD /* Main.storyboard */; };
 		440BE645275EFF5900707EBD /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE644275EFF5900707EBD /* MainMenuController.swift */; };
@@ -17,12 +16,13 @@
 		440BE64D275F06D900707EBD /* Int+Beats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE64C275F06D900707EBD /* Int+Beats.swift */; };
 		440BE64F275F08FB00707EBD /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE64E275F08FB00707EBD /* Logging.swift */; };
 		440BE652275F0E0D00707EBD /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE651275F0E0D00707EBD /* AboutWindowController.swift */; };
+		440BE654275F112C00707EBD /* SimulateTimeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE653275F112C00707EBD /* SimulateTimeWindowController.swift */; };
+		440BE659275F165200707EBD /* SimulateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE658275F165200707EBD /* SimulateTimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		440BE630275EFDB000707EBD /* Internet Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Internet Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		440BE633275EFDB000707EBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		440BE635275EFDB000707EBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		440BE637275EFDB200707EBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		440BE63A275EFDB200707EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		440BE63C275EFDB200707EBD /* Internet_Time.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Internet_Time.entitlements; sourceTree = "<group>"; };
@@ -33,6 +33,8 @@
 		440BE64E275F08FB00707EBD /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		440BE650275F0C5900707EBD /* Internet-Time-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Internet-Time-Info.plist"; sourceTree = SOURCE_ROOT; };
 		440BE651275F0E0D00707EBD /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
+		440BE653275F112C00707EBD /* SimulateTimeWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulateTimeWindowController.swift; sourceTree = "<group>"; };
+		440BE658275F165200707EBD /* SimulateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulateTimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,19 +68,44 @@
 			isa = PBXGroup;
 			children = (
 				440BE650275F0C5900707EBD /* Internet-Time-Info.plist */,
-				440BE635275EFDB000707EBD /* ViewController.swift */,
-				440BE637275EFDB200707EBD /* Assets.xcassets */,
-				440BE639275EFDB200707EBD /* Main.storyboard */,
 				440BE63C275EFDB200707EBD /* Internet_Time.entitlements */,
-				440BE644275EFF5900707EBD /* MainMenuController.swift */,
+				440BE637275EFDB200707EBD /* Assets.xcassets */,
 				440BE633275EFDB000707EBD /* AppDelegate.swift */,
+				440BE656275F115500707EBD /* Controllers */,
+				440BE655275F114500707EBD /* Views */,
+				440BE657275F116F00707EBD /* Utilities */,
+			);
+			path = "Internet Time";
+			sourceTree = "<group>";
+		};
+		440BE655275F114500707EBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				440BE639275EFDB200707EBD /* Main.storyboard */,
 				440BE648275F021E00707EBD /* MainMenu.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		440BE656275F115500707EBD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				440BE644275EFF5900707EBD /* MainMenuController.swift */,
+				440BE651275F0E0D00707EBD /* AboutWindowController.swift */,
+				440BE653275F112C00707EBD /* SimulateTimeWindowController.swift */,
+				440BE658275F165200707EBD /* SimulateTimeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		440BE657275F116F00707EBD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
 				440BE64A275F06B100707EBD /* Date+Beats.swift */,
 				440BE64C275F06D900707EBD /* Int+Beats.swift */,
 				440BE64E275F08FB00707EBD /* Logging.swift */,
-				440BE651275F0E0D00707EBD /* AboutWindowController.swift */,
 			);
-			path = "Internet Time";
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,10 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				440BE636275EFDB000707EBD /* ViewController.swift in Sources */,
 				440BE64F275F08FB00707EBD /* Logging.swift in Sources */,
 				440BE634275EFDB000707EBD /* AppDelegate.swift in Sources */,
+				440BE659275F165200707EBD /* SimulateTimeViewController.swift in Sources */,
 				440BE645275EFF5900707EBD /* MainMenuController.swift in Sources */,
+				440BE654275F112C00707EBD /* SimulateTimeWindowController.swift in Sources */,
 				440BE64B275F06B100707EBD /* Date+Beats.swift in Sources */,
 				440BE64D275F06D900707EBD /* Int+Beats.swift in Sources */,
 				440BE652275F0E0D00707EBD /* AboutWindowController.swift in Sources */,

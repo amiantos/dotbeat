@@ -679,7 +679,11 @@
         </menu>
         <menu id="LLH-QB-p0A">
             <items>
-                <menuItem title="Preferences" keyEquivalent="," id="dYT-TB-TIK"/>
+                <menuItem title="Simulate Time" keyEquivalent="s" id="dYT-TB-TIK">
+                    <connections>
+                        <action selector="simulateAction:" target="7M3-v3-cf5" id="Irn-Na-qZ1"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="U4v-cv-Cwj"/>
                 <menuItem title="About" id="Wf4-Md-Tz3">
                     <modifierMask key="keyEquivalentModifierMask"/>

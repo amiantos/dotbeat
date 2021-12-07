@@ -30,10 +30,24 @@ class MainMenuController: NSObject, NSMenuDelegate {
         aboutWindowController?.showWindow(self)
     }
     
+    private lazy var simulateTimeWindowController = NSStoryboard(
+        name: "Main",
+        bundle: nil
+    ).instantiateController(
+        withIdentifier: "SimulateTimeWindowController"
+    ) as? NSWindowController
+    
+    @IBAction func simulateAction(_: NSMenuItem) {
+        simulateTimeWindowController?.showWindow(self)
+    }
+    
     // MARK: - View Lifecycle
     
     override init() {
-        updateInterval = TimeInterval(1)
+        updateInterval = TimeInterval(3)
+        
+        Log.logLevel = .debug
+        Log.useEmoji = true
         
         super.init()
     }
@@ -56,6 +70,7 @@ class MainMenuController: NSObject, NSMenuDelegate {
     @objc func updateInternetTime() {
         if let statusBarButton = statusBarItem.button {
             let date = Date()
+            Log.debug("\(date.beats)")
             statusBarButton.title = "\(Int(date.beats))"
         }
     }

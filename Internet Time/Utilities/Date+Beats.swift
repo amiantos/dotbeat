@@ -32,4 +32,9 @@ extension Date {
     var nearestBeat: Int {
         return Int(floor(self.beats))
     }
+    
+    func convertToTimeZone(initTimeZone: TimeZone, timeZone: TimeZone) -> Date {
+         let delta = TimeInterval(timeZone.secondsFromGMT(for: self) - initTimeZone.secondsFromGMT(for: self))
+         return addingTimeInterval(delta)
+    }
 }
