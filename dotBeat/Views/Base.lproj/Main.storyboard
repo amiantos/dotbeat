@@ -35,13 +35,13 @@
         <scene sceneID="dtw-JA-6dp">
             <objects>
                 <windowController storyboardIdentifier="SimulateTimeWindowController" id="tUB-2e-f7Q" customClass="SimulateTimeWindowController" customModule="dotBeat" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Simulate Internet Time" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="veP-DM-EmE">
+                    <window key="window" title="Simulate Internet Time" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="internetTimeSimulator" animationBehavior="default" id="veP-DM-EmE">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="425" y="462" width="480" height="270"/>
+                        <rect key="contentRect" x="2026" y="1073" width="552" height="700"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
                         <view key="contentView" id="bb3-xG-c3a">
-                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <rect key="frame" x="0.0" y="0.0" width="552" height="700"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </view>
                         <connections>
@@ -54,7 +54,7 @@
                 </windowController>
                 <customObject id="Hyb-b3-Z3b" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="412"/>
+            <point key="canvasLocation" x="115" y="335"/>
         </scene>
         <!--Simulate Internet Time-->
         <scene sceneID="LSz-5d-bWy">
@@ -105,6 +105,7 @@
                             </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="WpZ-P3-Z1e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AP2-GB-Gul" secondAttribute="trailing" constant="200" id="1fO-KX-r2e"/>
                             <constraint firstItem="9mW-55-8Du" firstAttribute="top" secondItem="AP2-GB-Gul" secondAttribute="bottom" id="9OE-DQ-X4a"/>
                             <constraint firstAttribute="trailing" secondItem="WpZ-P3-Z1e" secondAttribute="trailing" constant="20" symbolic="YES" id="D3V-aV-9MQ"/>
                             <constraint firstItem="WpZ-P3-Z1e" firstAttribute="top" secondItem="tfs-4I-gMu" secondAttribute="top" constant="25" id="DNE-Ya-JKT"/>
@@ -114,6 +115,7 @@
                             <constraint firstItem="AP2-GB-Gul" firstAttribute="top" secondItem="tfs-4I-gMu" secondAttribute="top" constant="25" id="cAm-l6-3Fk"/>
                             <constraint firstAttribute="trailing" secondItem="PiK-Hi-g3K" secondAttribute="trailing" constant="20" symbolic="YES" id="chq-AT-57H"/>
                             <constraint firstItem="AP2-GB-Gul" firstAttribute="leading" secondItem="tfs-4I-gMu" secondAttribute="leading" constant="20" symbolic="YES" id="dCp-1E-CA8"/>
+                            <constraint firstItem="PiK-Hi-g3K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9mW-55-8Du" secondAttribute="trailing" constant="200" id="i6j-Wl-p8c"/>
                             <constraint firstItem="5VX-1q-8va" firstAttribute="leading" secondItem="tfs-4I-gMu" secondAttribute="leading" constant="20" symbolic="YES" id="nFU-zv-f0E"/>
                             <constraint firstItem="PiK-Hi-g3K" firstAttribute="top" secondItem="WpZ-P3-Z1e" secondAttribute="bottom" id="qZ7-Nu-UVp"/>
                             <constraint firstItem="9mW-55-8Du" firstAttribute="top" secondItem="AP2-GB-Gul" secondAttribute="bottom" id="zZH-do-SgW"/>
@@ -134,8 +136,8 @@
         <scene sceneID="1R5-sg-HNw">
             <objects>
                 <viewController id="Ae1-QR-4eD" customClass="AboutViewController" customModule="dotBeat" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="Ge7-2k-pj9">
-                        <rect key="frame" x="0.0" y="0.0" width="296" height="516"/>
+                    <view key="view" id="Ge7-2k-pj9">
+                        <rect key="frame" x="0.0" y="0.0" width="296" height="510"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-Sn-T8F">

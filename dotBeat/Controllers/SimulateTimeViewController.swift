@@ -4,6 +4,9 @@
 //
 //  Created by Brad Root on 12/6/21.
 //
+//  This Source Code Form is subject to the terms of the Mozilla Public
+//  License, v. 2.0. If a copy of the MPL was not distributed with this
+//  file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import Cocoa
 
@@ -72,6 +75,8 @@ class SimulateTimeViewController: NSViewController {
         updateInterface()
 
         timeSlider.doubleValue = Double(date.nearestBeat)
+        
+        self.view.window?.setFrameOrigin(NSPoint(x: 1, y: 1))
         
         var index = 0;
         for zone in zones {
