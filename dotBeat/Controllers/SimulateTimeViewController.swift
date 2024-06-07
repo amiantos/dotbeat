@@ -36,8 +36,6 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
     private var calendar = Calendar.current
     private var date: Date = Date()
     private var dateFormatter: DateFormatter = DateFormatter()
-    private var timeZoneIdentifiers: [String] = []
-    private var filteredTimeZoneIdentifiers: [String] = []
     private var cityMap: CityMap = CityMap()
 
     private var zones: [Zone] = [
@@ -54,7 +52,7 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
         Zone(timeZone: TimeZone(identifier: "Atlantic/South_Georgia")!, name: "South Georgia"),
         Zone(timeZone: TimeZone(identifier: "Atlantic/Cape_Verde")!, name: "Cape Verde"),
         Zone(timeZone: TimeZone(identifier: "Europe/London")!, name: "London"),
-        Zone(timeZone: TimeZone(identifier: "Africa/Lagos")!, name: "Lagos"),
+        Zone(timeZone: TimeZone(identifier: "Europe/Paris")!, name: "Paris"),
         Zone(timeZone: TimeZone(identifier: "Africa/Cairo")!, name: "Cairo"),
         Zone(timeZone: TimeZone(identifier: "Europe/Moscow")!, name: "Moscow"),
         Zone(timeZone: TimeZone(identifier: "Asia/Tehran")!, name: "Tehran"),
@@ -80,14 +78,49 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
 
         self.view.translatesAutoresizingMaskIntoConstraints = false
 
-        self.timeZoneIdentifiers = TimeZone.knownTimeZoneIdentifiers
-        self.filteredTimeZoneIdentifiers = timeZoneIdentifiers
         comboBox.usesDataSource = true
         comboBox.dataSource = self
         comboBox.delegate = self
 
         // Set the user's local timezone
-        comboBox.stringValue = cityMap.find(identifier: TimeZone.current.identifier)?.stringValue ?? TimeZone.current.identifier
+        comboBox.stringValue = "Biel, Bern, Switzerland"
+        localTimeStepper.timeZone = TimeZone(abbreviation: "CET")
+
+        var matchFound = false
+        for zone in zones {
+            if zone.timeZone == TimeZone.current {
+                Log.debug("Found matching timezone.")
+                matchFound = true
+                break
+            }
+        }
+        var gmtMatchFound = false
+        if !matchFound {
+            for (index, zone) in zones.enumerated() {
+                if zone.timeZone.secondsFromGMT() == TimeZone.current.secondsFromGMT() {
+                    Log.debug("Found matching GMT offset.")
+                    gmtMatchFound = true
+                    zones[index] = Zone(timeZone: TimeZone.current, name: "User Timezone")
+                    break
+                }
+            }
+        }
+        struct Results {
+            let zone: Zone
+            let index: Int
+            let distance: Int
+        }
+        if !gmtMatchFound {
+            var data: [Results] = []
+            for (index, zone) in zones.enumerated() {
+                data.append(Results(zone: zone, index: index, distance: abs(zone.timeZone.secondsFromGMT()-TimeZone.current.secondsFromGMT())))
+            }
+            data = data.sorted(by: {($0.distance, $0.index) < ($1.distance, $1.index)})
+            if let result = data.first {
+                zones[result.index] = Zone(timeZone: TimeZone.current, name: "User Timezone")
+            }
+        }
+        zones.sort(by: {$0.timeZone.secondsFromGMT() < $1.timeZone.secondsFromGMT()})
 
         dateFormatter.timeStyle = .short
 
@@ -111,7 +144,7 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
             zone.timeLabel.widthAnchor.constraint(equalToConstant: 115).isActive = true
             zone.cityLabel.widthAnchor.constraint(equalToConstant: 115).isActive = true
 
-            zone.highlightLine.widthAnchor.constraint(equalToConstant: 115).isActive = true
+            zone.highlightLine.widthAnchor.constraint(equalToConstant: 120).isActive = true
 
             // Far left items
             if [0, 4, 8, 12, 16, 20, 24, 28, 32].contains(index) {
@@ -126,7 +159,6 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
                 zone.gmtOffsetLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
                 zone.timeLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
                 zone.cityLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
-//                zone.highlightLine.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10).isActive = true
             }
 
             // Three columns on the right
