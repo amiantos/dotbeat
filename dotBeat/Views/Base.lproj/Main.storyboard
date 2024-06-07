@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -103,6 +103,32 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1qB-xg-6C2">
+                                <rect key="frame" x="150" y="639" width="254" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Kxc-BO-Tqz"/>
+                                </constraints>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" usesDataSource="YES" numberOfVisibleItems="5" id="Vve-fo-TTE">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </comboBoxCell>
+                            </comboBox>
+                            <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yAz-Os-adz">
+                                <rect key="frame" x="237" y="609" width="82" height="28"/>
+                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" useCurrentDate="YES" id="ckc-Pp-3h1">
+                                    <font key="font" metaFont="system"/>
+                                    <date key="date" timeIntervalSinceReferenceDate="739439609.96876395">
+                                        <!--2024-06-07 07:53:29 +0000-->
+                                    </date>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
+                                </datePickerCell>
+                                <connections>
+                                    <action selector="stepperChanged:" target="aYG-P2-CRV" id="dcC-nZ-FZh"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <constraints>
                             <constraint firstItem="WpZ-P3-Z1e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AP2-GB-Gul" secondAttribute="trailing" constant="200" id="1fO-KX-r2e"/>
@@ -110,20 +136,26 @@
                             <constraint firstAttribute="trailing" secondItem="WpZ-P3-Z1e" secondAttribute="trailing" constant="20" symbolic="YES" id="D3V-aV-9MQ"/>
                             <constraint firstItem="WpZ-P3-Z1e" firstAttribute="top" secondItem="tfs-4I-gMu" secondAttribute="top" constant="25" id="DNE-Ya-JKT"/>
                             <constraint firstItem="5VX-1q-8va" firstAttribute="top" secondItem="9mW-55-8Du" secondAttribute="bottom" constant="10" id="Lyj-rc-se6"/>
+                            <constraint firstItem="yAz-Os-adz" firstAttribute="centerX" secondItem="tfs-4I-gMu" secondAttribute="centerX" id="Ot5-Zc-STl"/>
                             <constraint firstItem="9mW-55-8Du" firstAttribute="leading" secondItem="tfs-4I-gMu" secondAttribute="leading" constant="20" symbolic="YES" id="St1-x5-ya2"/>
                             <constraint firstAttribute="trailing" secondItem="5VX-1q-8va" secondAttribute="trailing" constant="20" symbolic="YES" id="W3H-dS-d2C"/>
                             <constraint firstItem="AP2-GB-Gul" firstAttribute="top" secondItem="tfs-4I-gMu" secondAttribute="top" constant="25" id="cAm-l6-3Fk"/>
                             <constraint firstAttribute="trailing" secondItem="PiK-Hi-g3K" secondAttribute="trailing" constant="20" symbolic="YES" id="chq-AT-57H"/>
                             <constraint firstItem="AP2-GB-Gul" firstAttribute="leading" secondItem="tfs-4I-gMu" secondAttribute="leading" constant="20" symbolic="YES" id="dCp-1E-CA8"/>
                             <constraint firstItem="PiK-Hi-g3K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9mW-55-8Du" secondAttribute="trailing" constant="200" id="i6j-Wl-p8c"/>
+                            <constraint firstItem="1qB-xg-6C2" firstAttribute="top" secondItem="tfs-4I-gMu" secondAttribute="top" constant="23" id="mC0-sC-LZP"/>
                             <constraint firstItem="5VX-1q-8va" firstAttribute="leading" secondItem="tfs-4I-gMu" secondAttribute="leading" constant="20" symbolic="YES" id="nFU-zv-f0E"/>
                             <constraint firstItem="PiK-Hi-g3K" firstAttribute="top" secondItem="WpZ-P3-Z1e" secondAttribute="bottom" id="qZ7-Nu-UVp"/>
+                            <constraint firstItem="yAz-Os-adz" firstAttribute="top" secondItem="1qB-xg-6C2" secondAttribute="bottom" constant="8" symbolic="YES" id="rad-cy-EuJ"/>
+                            <constraint firstItem="1qB-xg-6C2" firstAttribute="centerX" secondItem="tfs-4I-gMu" secondAttribute="centerX" id="vYP-OL-Ayl"/>
                             <constraint firstItem="9mW-55-8Du" firstAttribute="top" secondItem="AP2-GB-Gul" secondAttribute="bottom" id="zZH-do-SgW"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="comboBox" destination="1qB-xg-6C2" id="i7S-Mc-Wie"/>
                         <outlet property="internetTimeLabel" destination="9mW-55-8Du" id="iNP-dH-oy4"/>
                         <outlet property="localTimeLabel" destination="PiK-Hi-g3K" id="Ir3-74-mkw"/>
+                        <outlet property="localTimeStepper" destination="yAz-Os-adz" id="jTO-Dg-Chi"/>
                         <outlet property="sliderChanged" destination="5VX-1q-8va" id="WkP-fD-Got"/>
                         <outlet property="timeSlider" destination="5VX-1q-8va" id="NgV-s3-AoU"/>
                     </connections>
@@ -170,8 +202,8 @@ dotBeat is in no way affiliated with Swatch® or its products.</string>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HO1-fC-Ywl">
-                                <rect key="frame" x="117" y="166" width="62" height="14"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.0" id="C7Q-bv-iQH">
+                                <rect key="frame" x="118" y="166" width="60" height="14"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.1" id="C7Q-bv-iQH">
                                     <font key="font" metaFont="label" size="11"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
