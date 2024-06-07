@@ -15,7 +15,14 @@ struct CityTimeZone: Codable {
     let timezone: String?
 
     var stringValue: String {
-        return "\(city), \(province), \(country)"
+        var string = "\(city)"
+        if !province.isEmpty {
+            string += ", \(province)"
+        }
+        if !country.isEmpty {
+            string += ", \(country)"
+        }
+        return string
     }
 }
 
@@ -53,5 +60,21 @@ class CityMap {
 
     func find(identifier: String) -> CityTimeZone? {
         return self.data.filter { $0.timezone == identifier }.first
+    }
+
+    func find(zone: Zone) -> CityTimeZone? {
+        if let result = self.data.filter({ $0.city == zone.name && $0.timezone == zone.timeZone.identifier}).first {
+            return result
+        }
+
+        if let result = self.data.filter({$0.timezone == zone.timeZone.identifier}).first {
+            return result
+        }
+
+        if let result = self.data.filter({$0.province.contains(zone.name)}).first {
+            return result
+        }
+
+        return nil
     }
 }

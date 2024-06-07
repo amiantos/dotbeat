@@ -61,7 +61,7 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
         Zone(timeZone: TimeZone(identifier: "Asia/Baku")!, name: "Baku"),
         Zone(timeZone: TimeZone(identifier: "Asia/Kabul")!, name: "Kabul"),
         Zone(timeZone: TimeZone(identifier: "Asia/Karachi")!, name: "Karachi"),
-        Zone(timeZone: TimeZone(identifier: "Asia/Calcutta")!, name: "Kolkata"),
+        Zone(timeZone: TimeZone(identifier: "Asia/Calcutta")!, name: "Calcutta"),
         Zone(timeZone: TimeZone(identifier: "Asia/Kathmandu")!, name: "Kathmandu"),
         Zone(timeZone: TimeZone(identifier: "Asia/Dhaka")!, name: "Dhaka"),
         Zone(timeZone: TimeZone(identifier: "Asia/Yangon")!, name: "Yangon"),
@@ -99,10 +99,10 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
 
         var index = 0;
         for zone in zones {
+            self.view.addSubview(zone.highlightLine)
             self.view.addSubview(zone.gmtOffsetLabel)
             self.view.addSubview(zone.cityLabel)
             self.view.addSubview(zone.timeLabel)
-            self.view.addSubview(zone.highlightLine)
 
             zone.gmtOffsetLabel.topAnchor.constraint(equalTo: zone.timeLabel.bottomAnchor, constant: 4).isActive = true
             zone.cityLabel.bottomAnchor.constraint(equalTo: zone.timeLabel.topAnchor, constant: -3).isActive = true
@@ -154,9 +154,10 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
                 zone.highlightLine.bottomAnchor.constraint(equalTo: zone.gmtOffsetLabel.bottomAnchor, constant: 5).isActive = true
             }
 
-
-
-
+            [zone.cityLabel, zone.gmtOffsetLabel, zone.timeLabel, zone.highlightLine].forEach { view in
+                let clickGesture = CustomRecognizer(target: self, action: #selector(setTimeCity), zone: zone)
+                view.addGestureRecognizer(clickGesture)
+            }
 
             index += 1
         }
@@ -180,6 +181,17 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
         }
     }
 
+    @objc private func setTimeCity(sender: Any) {
+        if let sender = sender as? CustomRecognizer {
+            if let foundCity = cityMap.find(zone: sender.zone) {
+                if let timeZone = foundCity.timezone, let selectedTimeZone = TimeZone(identifier: timeZone) {
+                    localTimeStepper.timeZone = selectedTimeZone
+                    comboBox.stringValue = foundCity.stringValue
+                }
+            }
+        }
+    }
+
     private func convertToTimezone(timeZone: TimeZone) -> String {
         return dateFormatter.string(from: date.convertToTimeZone(initTimeZone: TimeZone.current, timeZone: timeZone))
     }
@@ -200,7 +212,7 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
 
     func comboBoxWillPopUp(_ notification: Notification) {
         // Reset the filtered list when the combo box is about to be shown
-        filteredTimeZoneIdentifiers = timeZoneIdentifiers
+        cityMap.reset()
         comboBox.reloadData()
     }
 
@@ -238,5 +250,18 @@ public extension NSComboBox {
         get {
             return cell?.isAccessibilityExpanded() ?? false
         }
+    }
+}
+
+class CustomRecognizer: NSClickGestureRecognizer {
+    let zone: Zone
+
+    init(target: Any, action: Selector, zone: Zone) {
+        self.zone = zone
+        super.init(target: target, action: action)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
