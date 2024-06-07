@@ -38,6 +38,7 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
     private var dateFormatter: DateFormatter = DateFormatter()
     private var timeZoneIdentifiers: [String] = []
     private var filteredTimeZoneIdentifiers: [String] = []
+    private var cityMap: CityMap = CityMap()
 
     private var zones: [Zone] = [
         Zone(timeZone: TimeZone(identifier: "Pacific/Honolulu")!, name: "Honolulu"),
@@ -86,8 +87,7 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
         comboBox.delegate = self
 
         // Set the user's local timezone
-        comboBox.stringValue = TimeZone.current.identifier
-
+        comboBox.stringValue = cityMap.find(identifier: TimeZone.current.identifier)?.stringValue ?? TimeZone.current.identifier
 
         dateFormatter.timeStyle = .short
 
@@ -102,20 +102,23 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
             self.view.addSubview(zone.gmtOffsetLabel)
             self.view.addSubview(zone.cityLabel)
             self.view.addSubview(zone.timeLabel)
+            self.view.addSubview(zone.highlightLine)
 
             zone.gmtOffsetLabel.topAnchor.constraint(equalTo: zone.timeLabel.bottomAnchor, constant: 4).isActive = true
             zone.cityLabel.bottomAnchor.constraint(equalTo: zone.timeLabel.topAnchor, constant: -3).isActive = true
-
-
+            
             zone.gmtOffsetLabel.widthAnchor.constraint(equalToConstant: 115).isActive = true
             zone.timeLabel.widthAnchor.constraint(equalToConstant: 115).isActive = true
             zone.cityLabel.widthAnchor.constraint(equalToConstant: 115).isActive = true
 
+            zone.highlightLine.widthAnchor.constraint(equalToConstant: 115).isActive = true
+
             // Far left items
             if [0, 4, 8, 12, 16, 20, 24, 28, 32].contains(index) {
-                zone.gmtOffsetLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
-                zone.timeLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
-                zone.cityLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
+                zone.gmtOffsetLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
+                zone.timeLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
+                zone.cityLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
+                zone.highlightLine.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 25).isActive = true
             }
 
             // Far right items
@@ -123,6 +126,7 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
                 zone.gmtOffsetLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
                 zone.timeLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
                 zone.cityLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
+//                zone.highlightLine.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10).isActive = true
             }
 
             // Three columns on the right
@@ -130,19 +134,29 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
                 zone.gmtOffsetLabel.leadingAnchor.constraint(equalTo: zones[index-1].gmtOffsetLabel.trailingAnchor, constant: 8).isActive = true
                 zone.timeLabel.leadingAnchor.constraint(equalTo: zones[index-1].timeLabel.trailingAnchor, constant: 8).isActive = true
                 zone.cityLabel.leadingAnchor.constraint(equalTo: zones[index-1].cityLabel.trailingAnchor, constant: 8).isActive = true
+                zone.highlightLine.leadingAnchor.constraint(equalTo: zone.cityLabel.leadingAnchor, constant: -8).isActive = true
             }
 
             // Top Row Constraints
             if [0, 1, 2, 3].contains(index) {
                 zone.cityLabel.topAnchor.constraint(equalTo: timeSlider.bottomAnchor, constant: 16).isActive = true
+                zone.highlightLine.topAnchor.constraint(equalTo: timeSlider.bottomAnchor, constant: 11).isActive = true
             } else {
                 zone.cityLabel.topAnchor.constraint(equalTo: zones[index-4].gmtOffsetLabel.bottomAnchor, constant: 16).isActive = true
+                zone.highlightLine.topAnchor.constraint(equalTo: zones[index-4].gmtOffsetLabel.bottomAnchor, constant: 11).isActive = true
             }
 
             // Bottom row constraints
             if [28, 29, 30, 31].contains(index) {
                 zone.gmtOffsetLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
+                zone.highlightLine.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -15).isActive = true
+            } else {
+                zone.highlightLine.bottomAnchor.constraint(equalTo: zone.gmtOffsetLabel.bottomAnchor, constant: 5).isActive = true
             }
+
+
+
+
 
             index += 1
         }
@@ -173,15 +187,15 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
     // MARK: - ComboBox Delegate
 
     func numberOfItems(in comboBox: NSComboBox) -> Int {
-        return filteredTimeZoneIdentifiers.count
+        return cityMap.filteredData.count
     }
 
     func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any? {
-        return filteredTimeZoneIdentifiers[index]
+        return cityMap.filteredData[index].stringValue
     }
 
     func comboBox(_ comboBox: NSComboBox, completedString string: String) -> String? {
-        return filteredTimeZoneIdentifiers.first { $0.lowercased().hasPrefix(string.lowercased()) }
+        return cityMap.filteredData.first { $0.city.lowercased().hasPrefix(string.lowercased()) }?.stringValue
     }
 
     func comboBoxWillPopUp(_ notification: Notification) {
@@ -198,17 +212,18 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
         let searchText = comboBox.stringValue.lowercased()
 
         if searchText.isEmpty {
-            filteredTimeZoneIdentifiers = timeZoneIdentifiers
+            cityMap.reset()
         } else {
-            filteredTimeZoneIdentifiers = timeZoneIdentifiers.filter { $0.lowercased().contains(searchText) }
+            cityMap.search(text: searchText)
         }
         comboBox.reloadData()
     }
+
     func comboBoxSelectionDidChange(_ notification: Notification) {
         let selectedIndex = comboBox.indexOfSelectedItem
-        if selectedIndex >= 0 && selectedIndex < filteredTimeZoneIdentifiers.count {
-            let selectedTimeZoneIdentifier = filteredTimeZoneIdentifiers[selectedIndex]
-            if let selectedTimeZone = TimeZone(identifier: selectedTimeZoneIdentifier) {
+        if selectedIndex >= 0 && selectedIndex < cityMap.filteredData.count {
+            let selectedCity = cityMap.filteredData[selectedIndex]
+            if let timeZone = selectedCity.timezone, let selectedTimeZone = TimeZone(identifier: timeZone) {
                 localTimeStepper.timeZone = selectedTimeZone
             }
         }

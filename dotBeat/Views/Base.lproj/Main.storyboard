@@ -118,8 +118,8 @@
                                 <rect key="frame" x="237" y="609" width="82" height="28"/>
                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" useCurrentDate="YES" id="ckc-Pp-3h1">
                                     <font key="font" metaFont="system"/>
-                                    <date key="date" timeIntervalSinceReferenceDate="739439609.96876395">
-                                        <!--2024-06-07 07:53:29 +0000-->
+                                    <date key="date" timeIntervalSinceReferenceDate="739468786.91520905">
+                                        <!--2024-06-07 15:59:46 +0000-->
                                     </date>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>

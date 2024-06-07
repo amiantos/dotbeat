@@ -20,6 +20,8 @@
 		440BE659275F165200707EBD /* SimulateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE658275F165200707EBD /* SimulateTimeViewController.swift */; };
 		440BE65B275FD54B00707EBD /* Zones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE65A275FD54B00707EBD /* Zones.swift */; };
 		440BE65E2760177000707EBD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BE65D2760177000707EBD /* AboutViewController.swift */; };
+		4477F1FD2C1361DE004EF4FA /* cityMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 4477F1FC2C1361DE004EF4FA /* cityMap.json */; };
+		4477F1FF2C136200004EF4FA /* CityMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477F1FE2C136200004EF4FA /* CityMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		440BE658275F165200707EBD /* SimulateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulateTimeViewController.swift; sourceTree = "<group>"; };
 		440BE65A275FD54B00707EBD /* Zones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zones.swift; sourceTree = "<group>"; };
 		440BE65D2760177000707EBD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		4477F1FC2C1361DE004EF4FA /* cityMap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cityMap.json; sourceTree = "<group>"; };
+		4477F1FE2C136200004EF4FA /* CityMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		440BE657275F116F00707EBD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4477F1FC2C1361DE004EF4FA /* cityMap.json */,
+				4477F1FE2C136200004EF4FA /* CityMap.swift */,
 				440BE64A275F06B100707EBD /* Date+Beats.swift */,
 				440BE64C275F06D900707EBD /* Int+Beats.swift */,
 				440BE64E275F08FB00707EBD /* Logging.swift */,
@@ -150,7 +156,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					440BE62F275EFDB000707EBD = {
 						CreatedOnToolsVersion = 13.1;
@@ -183,6 +189,7 @@
 				440BE638275EFDB200707EBD /* Assets.xcassets in Resources */,
 				440BE63B275EFDB200707EBD /* Main.storyboard in Resources */,
 				440BE649275F021E00707EBD /* MainMenu.xib in Resources */,
+				4477F1FD2C1361DE004EF4FA /* cityMap.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +208,7 @@
 				440BE64B275F06B100707EBD /* Date+Beats.swift in Sources */,
 				440BE65B275FD54B00707EBD /* Zones.swift in Sources */,
 				440BE64D275F06D900707EBD /* Int+Beats.swift in Sources */,
+				4477F1FF2C136200004EF4FA /* CityMap.swift in Sources */,
 				440BE65E2760177000707EBD /* AboutViewController.swift in Sources */,
 				440BE652275F0E0D00707EBD /* AboutWindowController.swift in Sources */,
 			);
@@ -254,9 +262,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -315,9 +325,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -343,11 +355,13 @@
 				CODE_SIGN_ENTITLEMENTS = dotBeat/dotBeat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = I;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2Y9M69QJKZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "dotBeat-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = dotBeat;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
@@ -356,8 +370,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.amiantos.dotBeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -373,11 +387,13 @@
 				CODE_SIGN_ENTITLEMENTS = dotBeat/dotBeat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = I;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 2Y9M69QJKZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "dotBeat-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = dotBeat;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
@@ -386,8 +402,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.amiantos.dotBeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

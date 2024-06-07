@@ -17,7 +17,8 @@ class Zone {
     public var cityLabel: NSTextField
     public var timeLabel: NSTextField
     public var name: String
-    
+    public var highlightLine: NSBox
+
     init(timeZone: TimeZone, name: String) {
         self.timeZone = timeZone
         self.name = name
@@ -28,11 +29,8 @@ class Zone {
         gmtOffsetLabel.translatesAutoresizingMaskIntoConstraints = false
         gmtOffsetLabel.textColor = .tertiaryLabelColor
         gmtOffsetLabel.font = NSFont.systemFont(ofSize: 11)
-        
-        var nameString = timeZone.localizedName(for: .generic, locale: Locale.current) ?? self.name
-        nameString = nameString.replacingOccurrences(of: " Standard", with: "")
-        nameString = nameString.replacingOccurrences(of: " Time", with: "")
-        cityLabel = NSTextField(labelWithString: nameString)
+
+        cityLabel = NSTextField(labelWithString: name)
         cityLabel.translatesAutoresizingMaskIntoConstraints = false
         cityLabel.textColor = .secondaryLabelColor
         
@@ -40,8 +38,18 @@ class Zone {
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.textColor = .labelColor
         timeLabel.font = NSFont.systemFont(ofSize: 18)
-        
-    
+
+
+        highlightLine = NSBox()
+        highlightLine.titlePosition = .noTitle
+        highlightLine.frame = NSRect(x: 20, y: 20, width: 115, height: 100)
+        highlightLine.translatesAutoresizingMaskIntoConstraints = false
+        highlightLine.isHidden = true
+
+        if timeZone.identifier == TimeZone.current.identifier {
+            highlightLine.isHidden = false
+        }
+
     }
 }
 
