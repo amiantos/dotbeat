@@ -83,8 +83,12 @@ class SimulateTimeViewController: NSViewController, NSComboBoxDataSource, NSComb
         comboBox.delegate = self
 
         // Set the user's local timezone
-        comboBox.stringValue = "Biel, Bern, Switzerland"
-        localTimeStepper.timeZone = TimeZone(abbreviation: "CET")
+        comboBox.stringValue = "Biel Mean Time"
+        if TimeZone(abbreviation: "CET")?.isDaylightSavingTime() ?? false {
+            localTimeStepper.timeZone = TimeZone(abbreviation: "WEST")
+        } else {
+            localTimeStepper.timeZone = TimeZone(abbreviation: "CET")
+        }
 
         var matchFound = false
         for zone in zones {
