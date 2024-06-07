@@ -8,7 +8,7 @@ dotBeat Internet Time is a small app that shows the current [Swatch Internet Tim
 
 ## Download
 
-- [Download dotBeat v1.1 for macOS 10.12 and later](https://amiantos.s3.amazonaws.com/dotBeat-v1.1.zip)
+- [Download dotBeat v1.1 for macOS 10.13 and later](https://amiantos.s3.amazonaws.com/dotBeat-v1.1.zip)
 - Or, [Purchase dotBeat on the App Store](https://apps.apple.com/us/app/dotbeat-internet-time/id1599168929)
 
 ## What is Internet Time?
