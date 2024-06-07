@@ -4,6 +4,7 @@
 //
 //  Created by Brad Root on 6/7/24.
 //
+// cityMap.json is from https://github.com/kevinroberts/city-timezones originally and has been modified to correct errors
 
 import Foundation
 
