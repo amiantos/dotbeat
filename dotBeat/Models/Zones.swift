@@ -46,7 +46,7 @@ class Zone {
         highlightLine.translatesAutoresizingMaskIntoConstraints = false
         highlightLine.isHidden = true
 
-        if timeZone.identifier == TimeZone.current.identifier {
+        if timeZone.secondsFromGMT() == TimeZone.current.secondsFromGMT() {
             highlightLine.isHidden = false
         }
 
